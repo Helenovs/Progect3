@@ -11,15 +11,47 @@ import Home from '../Home';
 import Account from '../Account';
 import Admin from '../Admin';
 
+import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 // import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      authUser: null,
+    };
+  }
+
+  // componentDidMount() {
+  //   this.props.firebase.auth.onAuthStateChanged(authUser => {
+  //     authUser
+  //       ? this.setState({ authUser })
+  //       : this.setState({ authUser: null });
+  //   });
+  // }
+
+  componentDidMount() {
+    this.listener = this.props.firebase.auth.onAuthStateChanged(
+      authUser => {
+        authUser
+          ? this.setState({ authUser })
+          : this.setState({ authUser: null });
+      },
+    );
+  }
+
+  componentWillUnmount() {
+    this.listener();
+  }
+
+
   render() {
     return (
       <Router>
       <div>
-        <Navigation />
+        <Navigation authUser={this.state.authUser} />
 
         <hr />
 
@@ -36,4 +68,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withFirebase(App);
