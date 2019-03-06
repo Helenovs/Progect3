@@ -7,7 +7,7 @@ import * as ROUTES from '../../constants/routes';
 const Navigation = ({ authUser }) => (
   <div>{authUser ? <NavigationAuth /> : <NavigationNonAuth />}</div>
 );
-const NavigationAuth = () => (
+const NavigationAuth = (props) => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
   <div className="collapse navbar-collapse">
   <img src="../../../chat.png" className="navimg"/>
@@ -21,7 +21,7 @@ const NavigationAuth = () => (
     </li>
 
     <li className="nav-item active">
-      <SignOutButton />
+      <SignOutButton history={props.history}/>
     </li>
   </ul>
   </div>
