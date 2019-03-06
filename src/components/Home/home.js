@@ -30,9 +30,9 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>CHATROOM</h1>
-        <p>The ChatRoom is accessible by every signed in user.</p>
+        <p className="alert alert-dismissible alert-info">The ChatRoom is accessible by every signed in user.</p>
 
         <Messages users={this.state.users} />
       </div>

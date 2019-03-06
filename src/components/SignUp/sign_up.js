@@ -112,7 +112,7 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = () => (
   <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    Don't have an account? <Link to={ROUTES.SIGN_UP} className="btn btn-secondary">Sign Up</Link>
   </p>
 );
 // const SignUpForm = withFirebase(SignUpFormBase);

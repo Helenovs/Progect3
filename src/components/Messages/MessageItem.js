@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Messages.css';
 
 class MessageItem extends Component {
   constructor(props) {
@@ -32,40 +33,49 @@ class MessageItem extends Component {
     const { editMode, editText } = this.state;
 
     return (
-      <li>
-        {editMode ? (
-          <input
-            type="text"
-            value={editText}
-            onChange={this.onChangeEditText}
-          />
-        ) : (
-          <span>
-            <strong>
-              {message.user.username || message.user.userId}
-            </strong>{' '}
-            {message.text} {message.editedAt && <span>(Edited)</span>}
-          </span>
-        )}
+      <div className="modal-dialog">
+      <div className="modal-content">
+        <li className="sign_del">
+          {editMode ? (
+            <input
+              className="input-header"
+              type="text"
+              value={editText}
+              onChange={this.onChangeEditText}
+            />
+          ) : (
+            <span>
+              <div className="modal-header">
+                {message.user.username || message.user.userId}
+              </div>{' '}
+              <div className="modal-header">
+              {message.text} {message.editedAt && <span>(Edited)</span>}
+              </div>
+            </span>
+          )}
+          <div className="modal-footer">
+          {editMode ? (
+            <span>
+              <button onClick={this.onSaveEditText} className="btn btn-warning">Save</button>
+              <button onClick={this.onToggleEditMode} className="btn btn-warning">Reset</button>
+            </span>
+          ) : (
+            <button onClick={this.onToggleEditMode} className="btn btn-warning">Edit</button>
+          )}
 
-        {editMode ? (
-          <span>
-            <button onClick={this.onSaveEditText}>Save</button>
-            <button onClick={this.onToggleEditMode}>Reset</button>
-          </span>
-        ) : (
-          <button onClick={this.onToggleEditMode}>Edit</button>
-        )}
-
-        {!editMode && (
-          <button
-            type="button"
-            onClick={() => onRemoveMessage(message.uid)}
-          >
-            Delete
-          </button>
-        )}
-      </li>
+          {!editMode && (
+            <button
+              type="button"
+              onClick={() => onRemoveMessage(message.uid)}
+              className="btn btn-warning"
+            >
+              Delete
+            </button>
+          )}
+          </div>
+        </li>
+        </div>
+      </div>
     );
   }
 }

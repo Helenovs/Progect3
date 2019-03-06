@@ -70,7 +70,7 @@ class Messages extends Component {
   };
 
   onEditMessage = (message, text) => {
-    
+
 
     this.props.firebase.message(message.uid).set({
       ...message,
@@ -100,7 +100,7 @@ class Messages extends Component {
         {authUser => (
           <div>
             {!loading && messages && (
-              <button type="button" onClick={this.onNextPage}>
+              <button type="button" onClick={this.onNextPage} className="btn btn-primary btndop">
                 More
               </button>
             )}
@@ -131,8 +131,9 @@ class Messages extends Component {
                 type="text"
                 value={text}
                 onChange={this.onChangeText}
+                className="form-control form-control-lg"
               />
-              <button type="submit">Send</button>
+              <button type="submit" className="btn btn-primary">Send Message</button>
             </form>
           </div>
         )}
