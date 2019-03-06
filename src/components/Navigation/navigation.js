@@ -8,31 +8,40 @@ const Navigation = ({ authUser }) => (
   <div>{authUser ? <NavigationAuth /> : <NavigationNonAuth />}</div>
 );
 const NavigationAuth = () => (
-  <ul>
-    <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
+  <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div className="collapse navbar-collapse">
+  <img src="../../../chat.png" className="navimg"/>
+  <ul className="navbar-nav mr-auto">
+    <li className="nav-item active">
+      <Link to={ROUTES.HOME } className="nav-link">ChatRoom</Link>
     </li>
-    <li>
-      <Link to={ROUTES.HOME}>Home</Link>
+
+    <li className="nav-item active">
+      <Link to={ROUTES.CHATROOM} className="nav-link">Users</Link>
     </li>
-    <li>
-      <Link to={ROUTES.ACCOUNT}>Account</Link>
-    </li>
-    <li>
+
+    <li className="nav-item active">
       <SignOutButton />
     </li>
   </ul>
+  </div>
+  </nav>
 );
 
 const NavigationNonAuth = () => (
-  <ul>
-    <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
+  <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div className="collapse navbar-collapse">
+  <img src="../../../chat.png" className="navimg"/>
+  <ul className="navbar-nav mr-auto">
+    <li className="nav-item active">
+      <Link to={ROUTES.LANDING} className="nav-link">Landing</Link>
     </li>
-    <li>
-      <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+    <li className="nav-item active">
+      <Link to={ROUTES.SIGN_IN} className="nav-link">Sign In</Link>
     </li>
   </ul>
+  </div>
+  </nav>
 );
 
 

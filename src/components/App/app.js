@@ -9,6 +9,7 @@ import SignIn from '../SignIn';
 import PasswordForget from '../PasswordForget';
 import Home from '../Home';
 import Account from '../Account';
+import ChatRoom from '../ChatRoom';
 import Admin from '../Admin';
 
 import { withFirebase } from '../Firebase';
@@ -61,6 +62,7 @@ class App extends Component {
         <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
         <Route path={ROUTES.HOME} component={Home} />
         <Route path={ROUTES.ACCOUNT} component={Account} />
+        <Route path={ROUTES.CHATROOM} component={ChatRoom} />
         <Route path={ROUTES.ADMIN} component={Admin} />
       </div>
       </Router>

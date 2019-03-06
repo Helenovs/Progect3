@@ -1,0 +1,15 @@
+body {
+  background-color: #03def49e;
+}
+.container {
+  max-width: 960px; /* Lazy responsiveness */
+  margin: 0 auto;
+  background-color: #ccc;
+  padding: 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+.navimg {
+  height: 5%;
+  width: 5%;
+}
