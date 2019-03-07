@@ -10,7 +10,7 @@ const Navigation = ({ authUser }) => (
 const NavigationAuth = (props) => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
   <div className="collapse navbar-collapse">
-  <img src="../../../chat.png" className="navimg"/>
+  <img src="chat.png" className="navimg"/>
   <ul className="navbar-nav mr-auto">
     <li className="nav-item active">
       <Link to={ROUTES.HOME } className="nav-link">ChatRoom</Link>
@@ -31,7 +31,7 @@ const NavigationAuth = (props) => (
 const NavigationNonAuth = () => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
   <div className="collapse navbar-collapse">
-  <img src="../../../chat.png" className="navimg"/>
+  <img src="chat.png" className="navimg"/>
   <ul className="navbar-nav mr-auto">
     <li className="nav-item active">
       <Link to={ROUTES.LANDING} className="nav-link">Landing</Link>

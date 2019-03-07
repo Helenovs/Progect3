@@ -1,7 +1,7 @@
 {
   "name": "messenger",
   "version": "0.1.0",
-  "homepage": "https://helenovs.github.io/",
+  "homepage": "https://helenovs.github.io/Progect3/",
   "private": true,
   "dependencies": {
     "firebase": "^5.8.5",
