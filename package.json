@@ -5,7 +5,8 @@
   "private": true,
   "dependencies": {
     "firebase": "^5.8.5",
-    "gh-pages": "^2.0.1",
+    "gh-pages": "^2.0.1"
+  },
   "private": true,
   "dependencies": {
     "firebase": "^5.8.5",
